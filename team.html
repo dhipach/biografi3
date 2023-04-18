@@ -1,0 +1,361 @@
+
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title> ANGGOTA </title>
+    <style>
+        :root {
+  --scrollcolor: #000000;
+  --scrollbackground: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #EEEEEE;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: system-ui;
+  line-height: 1.1;
+  font-weight: 300;
+  color: #fff;
+  margin: 4rem auto 1rem;
+  width: 85%;
+  max-width: 1280px;
+}
+
+.slider {
+  width: 85%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.slider__content {
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scrollbar-color: var(--scrollcolor) var(--scrollbackground);
+}
+.slider__content::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 1rem;
+  background: var(--scrollbackground);
+}
+.slider__content::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: var(--scrollcolor);
+}
+.slider__content::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  background: var(--scrollbackground);
+}
+
+.slider__item {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 100%;
+  width: 100%;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+}
+@media (min-width: 460px) {
+  .slider__item {
+    aspect-ratio: 2/3;
+    min-width: calc((100% / 2) - 2rem);
+  }
+}
+@media (min-width: 940px) {
+  .slider__item {
+    min-width: calc((100% / 3) - 4rem);
+  }
+}
+
+.slider__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider__info {
+  position: relative;
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(32, 50, 57, 0));
+}
+.slider__info h2 {
+  color: #fff;
+  font-family: system-ui;
+  line-height: 1.1;
+  font-weight: 300;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.slider__nav {
+  margin: 1rem 0 4rem;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+@media (min-width: 460px) {
+  .slider__nav {
+    justify-content: flex-end;
+  }
+}
+
+.slider__nav__button {
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 2rem;
+  background: #fff;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+  opacity: 0.25;
+}
+.slider__nav__button--active {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.cta {
+  border: none;
+  background: none;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: rgb(0, 0, 0);
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+h2{
+  cursor: pointer;
+}
+footer{
+	background-color: #333;
+	padding: 50px;
+	text-align: center;
+}
+footer small{
+	color: #FFF;
+}
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm  justify-content-end">
+    <ul class="navbar-nav">
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <button class="cta">
+            <span class="hover-underline-animation"> Back To Menu </span>
+            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+            </svg>
+        </button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<!-- partial:index.partial.html -->
+<h1 class="title" style="text-align: center; color: #000000;">DHIPACH TEAM</h1>
+<div class="slider" x-data="{start: true, end: false}">
+  <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+    <div class="slider__item">
+      <img class="slider__image" src="foto/krs.jpg" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo" >Krisna 08</h2>
+        <div id="demo" class="collapse" style=" color: #fff;">
+        Nama : I Gusti Ngurah Agung Krisna Mantra
+        <br>
+        No   : 08
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: script writer
+        </div>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="foto/adp.jpg" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo1" >Adhip 22</h2>
+        <div id="demo1" class="collapse" style=" color: #fff;">
+        Nama : Kadek Adhipanna Surya Nata
+        <br>
+        No   : 22
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: Programer
+        </div>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="foto/dnd.jpg" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo2" >Dandy 11</h2>
+        <div id="demo2" class="collapse" style=" color: #fff;">
+        Nama : I Komang Dandy Wijaya
+        <br>
+        No   : 11
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: Sebagai Wartawan
+        </div>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="foto/art.jpg" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo6" >Dandy 11</h2>
+        <div id="demo6" class="collapse" style=" color: #fff;">
+        Nama : I Kadek Arta Yasa
+        <br>
+        No   : 10
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: Sebagai Wartawan
+        </div>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="foto/shw.JPG" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo3" >Shadewa 14</h2>
+        <div id="demo3" class="collapse" style=" color: #fff;">
+        Nama : I Made Shadewa Dhipayana A.H.S
+        <br>
+        No   : 14
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: Sebagai Wartawan
+        </div>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="foto/knz.jpg" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo4" >Kenza 17</h2>
+        <div id="demo4" class="collapse" style=" color: #fff;">
+        Nama : I Gede Kenza Pramaditha Widnyana
+        <br>
+        No   : 17
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: Sebagai Wartawan
+        </div>
+      </div>
+    </div>
+    <div class="slider__item">
+      <img class="slider__image" src="foto/dff.jpg" alt="Image">
+      <div class="slider__info">
+        <h2 data-bs-toggle="collapse" data-bs-target="#demo5" >Daffa 04</h2>
+        <div id="demo5" class="collapse" style=" color: #fff;">
+        Nama : Daffa Malik Azmi
+        <br>
+        No   : 04
+        <br>
+        Kelas: XRPL2
+        <br>
+        Kerja: support
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slider__nav">
+    <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
+    <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+  </div>
+</div>
+<!-- partial -->
+<footer>
+  <div class="container1">
+      <small>Copyright &copy; 2023 - DHIPACH</small>
+  </div>
+</footer>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
